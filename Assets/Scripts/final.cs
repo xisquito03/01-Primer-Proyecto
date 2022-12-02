@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class final : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject player;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.name.Equals("Player"))
+        {
+            player.SetActive(false);
+            Debug.Log("Enhorabuena! Has completado el juego");
+        }
     }
 }
