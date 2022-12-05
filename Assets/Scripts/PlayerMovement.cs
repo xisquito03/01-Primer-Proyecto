@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 15f;
     public float turnspeed =10f;
+    public float zrange= 2.3f;
     private float horizontalInput;
     private float verticalInput;
 
@@ -18,4 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Rotate(Vector3.up, turnspeed * Time.deltaTime * horizontalInput);
     }
+
+  
 }
