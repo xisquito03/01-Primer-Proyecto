@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class obstaculos : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject player;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (other.tag.Equals("Player"))
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            Destroy(player);
+            Debug.Log("Game Over");
+            Time.timeScale = 0;
+
+        }
     }
 }

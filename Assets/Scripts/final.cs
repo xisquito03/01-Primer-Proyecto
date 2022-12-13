@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class final : MonoBehaviour
 {
-    public GameObject player;
+    Vector3 startPos;
 
+        private void Start()
+    {
+        startPos = this.transform.position;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("Player"))
+        if (other.gameObject.tag.Equals("Final"))
         {
-            player.SetActive(false);
-            Debug.Log("Enhorabuena! Has completado el juego");
+            this.transform.position = startPos;
+
         }
     }
+
 }
+
+
+
+
