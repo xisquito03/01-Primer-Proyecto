@@ -39,4 +39,14 @@ public class coincounter : MonoBehaviour
     {
         coins++;
     }
+
+    private void Update()
+    {
+        if (coins == 23)
+        {
+            Destroy(gameObject);
+            Debug.Log("Enhorabuena! Has completado el juego");
+            Time.timeScale = 0;
+        }
+    }
 }

@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class final : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Vector3 startPos;
+
+        private void Start()
     {
-        
+        startPos = this.transform.position;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Final"))
+        {
+            this.transform.position = startPos;
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
+
+
